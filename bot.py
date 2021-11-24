@@ -154,7 +154,7 @@ if True:
             for comment in comments.replies:
                 if str(comment.author) != 'idk_bot':
                     not_replied = False
-            if not_replied == True:
+            if not_replied:
                 comments_without_replies.append(comments)
 
         # HINT:
@@ -185,13 +185,13 @@ if True:
     # your newly selected submission should be randomly selected from the 5 hottest submissions
     randnum = random.random()
     allsubs = []
-    if randnum >= 0.5:
+    if randnum >= 0.8:
         print('Original Submission')
         submission = reddit.submission(url='https://old.reddit.com/r/BotTown/comments/r00bcw/a_new_top_post/')
         submission.reply(generate_comment())
-    if randnum < 0.5:
+    if randnum < 0.8:
         print('Top Subreddit Submission')
-        for submission in reddit.subreddit('BotTown').hot(filter= 5):
+        for submission in reddit.subreddit('BotTown').hot(limit= 5):
             allsubs.append(submission)
         newsubmission = random.choice(allsubs)
         submission = reddit.submission(id=newsubmission)
@@ -202,7 +202,7 @@ if True:
     # This doesn't avoid rate limiting
     # (since we're not sleeping for a long period of time),
     # but it does make the program's output more readable.
-    time.sleep(37)
+    time.sleep(1)
 
 # Here is some of the extra credit Mike!
 
