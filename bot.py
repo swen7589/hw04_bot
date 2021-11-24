@@ -49,7 +49,7 @@ def generate_comment():
     for k in replacements.keys():
         string = string.replace('['+k+']', random.choice(replacements[k]))
 
-    print(string)
+    return string
 
 # FIXME:
 # connect to reddit 
@@ -58,7 +58,7 @@ reddit = praw.Reddit('idk_bot')
 # FIXME:
 # select a "home" submission in the /r/BotTown subreddit to post to,
 # and put the url below
-submission_url = 'https://old.reddit.com/r/BotTown/comments/qqmr8l/main_discussion_thread/'
+submission_url = 'https://old.reddit.com/r/BotTown/comments/r0uchd/aoc_text_thread/'
 submission = reddit.submission(url=submission_url)
 
 # each iteration of this loop will post a single comment;
@@ -128,7 +128,7 @@ if True:
     has_not_commented = len(not_my_comments) == len(all_comments)
 
 
-    if has_not_commented:
+    while has_not_commented:
         # FIXME (task 2)
         # if you have not made any comment in the thread, then post a top level comment
         #
@@ -202,8 +202,7 @@ if True:
     # This doesn't avoid rate limiting
     # (since we're not sleeping for a long period of time),
     # but it does make the program's output more readable.
-    time.sleep(1)
-
+    time.sleep(37)
 
 # Here is some of the extra credit Mike!
 
@@ -228,4 +227,3 @@ if True:
             comment.upvote()
         if 'Sanders' in comment.body.lower() and subjectivity > 0:
             comment.downvote()
-            
