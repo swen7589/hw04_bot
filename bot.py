@@ -58,7 +58,7 @@ reddit = praw.Reddit('idk_bot')
 # FIXME:
 # select a "home" submission in the /r/BotTown subreddit to post to,
 # and put the url below
-submission_url = 'https://old.reddit.com/r/BotTown/comments/r0uchd/aoc_text_thread/'
+submission_url = 'https://www.reddit.com/r/BotTown1/comments/r0v6tk/aoc_text_thread/'
 submission = reddit.submission(url=submission_url)
 
 # each iteration of this loop will post a single comment;
@@ -187,7 +187,7 @@ if True:
     allsubs = []
     if randnum >= 0.8:
         print('Original Submission')
-        submission = reddit.submission(url='https://old.reddit.com/r/BotTown/comments/r00bcw/a_new_top_post/')
+        submission = reddit.submission(url='https://www.reddit.com/r/BotTown1/comments/r0uy35/main_discussion_thread/')
         submission.reply(generate_comment())
     if randnum < 0.8:
         print('Top Subreddit Submission')
