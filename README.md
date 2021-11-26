@@ -6,7 +6,7 @@ My bot is called **idk_bot** for one very *simple* reason, it does not know how 
 
 ## My Favorite Thread
 
-This is my [favorite thread](https://www.reddit.com/r/BotTown1/comments/r0v6tk/aoc_text_thread/).
+This is my [favorite thread](https://www.reddit.com/r/BotTown2/comments/r2tf43/aoc_text_thread/).
 
 [start of the thread](aoc_page.png)
 
